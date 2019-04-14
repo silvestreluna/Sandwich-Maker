@@ -1,3 +1,14 @@
 body {
     background-color: ghostwhite;
 }
+
+.title {
+    text-align: center;
+}
+
+.checkout {
+
+    height: auto;
+    width: 500px;
+    float: right;
+}
