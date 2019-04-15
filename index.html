@@ -1,101 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sandwich Maker</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/main.css">
 </head>
+
 <body>
-    <h1 class="title">Sandwich Maker</h1>
+    <h1 class="title text-center">Sandwich Maker</h1>
 
-    <div id="bread-container">
-        <h4>Select Your Bread:</h4>
-        <div>
-            <input type="checkbox" id="white" name="bread" class="bread">
-            <label for="white">White</label>
+    <div class="container">
+        <div class="orderSelection float-left">
 
-            <input type="checkbox" id="wheat" name="bread" class="bread">
-            <label for="wheat">Wheat</label>
+            <div id="bread-container">
+                <h4>Select Your Bread:</h4>
+                <div>
+                    <input type="checkbox" id="white" name="bread" class="bread order">
+                    <label for="white">White</label>
 
-            <input type="checkbox" id="whole" name="bread" class="bread">
-            <label for="whole">Whole</label>
+                    <input type="checkbox" id="wheat" name="bread" class="bread order">
+                    <label for="wheat">Wheat</label>
+
+                    <input type="checkbox" id="whole" name="bread" class="bread order">
+                    <label for="whole">Whole</label>
+                </div>
+            </div>
+
+            <div id="meat-container">
+                <h4>Select Your Meat:</h4>
+                <div>
+                    <input type="checkbox" id="ham" name="meat" class="meat order">
+                    <label for="ham">Ham</label>
+
+                    <input type="checkbox" id="tuna" name="meat" class="meat order">
+                    <label for="tuna">Tuna</label>
+
+                    <input type="checkbox" id="chicken" name="meat" class="meat order">
+                    <label for="chicken">Chicken</label>
+                </div>
+            </div>
+
+            <div id="condiment-container">
+                <h4>Select Your condiments:</h4>
+                <div>
+                    <input type="checkbox" id="mayonnaise" name="condiment" class="condiment order">
+                    <label for="mayonnaise">Mayonnaise</label>
+
+                    <input type="checkbox" id="ranch" name="condiment" class="condiment order">
+                    <label for="ranch">Ranch</label>
+
+                    <input type="checkbox" id="mustard" name="condiment" class="condiment order">
+                    <label for="mustard">Mustard</label>
+                </div>
+            </div>
+
+            <div id="cheese-container">
+                <h4>Select Your Cheese:</h4>
+                <div>
+                    <input type="checkbox" id="provolone" name="cheese" class="cheese order">
+                    <label for="provolone">Provolone</label>
+
+                    <input type="checkbox" id="swiss" name="cheese" class="cheese order">
+                    <label for="swiss">Swiss</label>
+
+                    <input type="checkbox" id="american" name="cheese" class="cheese order">
+                    <label for="american">American</label>
+                </div>
+            </div>
+
+            <div id="veggies-container">
+                <h4>Select Your Veggies:</h4>
+                <div>
+                    <input type="checkbox" id="lettuce" name="veggies" class="veggies order">
+                    <label for="lettuce">Lettuce</label>
+
+                    <input type="checkbox" id="tomatoes" name="veggies" class="veggies order">
+                    <label for="tomatoes">Tomatoes</label>
+
+                    <input type="checkbox" id="spinach" name="veggies" class="veggies order">
+                    <label for="spinach">Spinach</label>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div id="meat-container">
-        <h4>Select Your Meat:</h4>
-        <div>
-            <input type="checkbox" id="ham" name="meat" class="meat">
-            <label for="ham">ham</label>
-
-            <input type="checkbox" id="tuna" name="meat" class="meat">
-            <label for="tuna">Tuna</label>
-
-            <input type="checkbox" id="chicken" name="meat" class="meat">
-            <label for="chicken">Chicken</label>
+        <div class="checkout float-right">
+            <h4>Checkout Items:</h4>
+            <div id="printSandwich"></div>
+            <div id="printMeat"></div>
+            <div id="printCondiment"></div>
+            <div id="printCheese"></div>
+            <div id="printVeggies"></div>
+            <div class="totalPrice">
+                <h3>Total:</h3>
+            </div>
         </div>
-    </div>
-
-    <div id="condiment-container">
-            <h4>Select Your condiments:</h4>
-            <div>
-                <input type="checkbox" id="mayonnaise" name="condiment" class="condiment">
-                <label for="mayonnaise">Mayonnaise</label>
-    
-                <input type="checkbox" id="ranch" name="condiment" class="condiment">
-                <label for="ranch">Ranch</label>
-    
-                <input type="checkbox" id="mustard" name="condiment" class="condiment">
-                <label for="mustard">Mustard</label>
-            </div>
-     </div>
-
-     <div id="cheese-container">
-            <h4>Select Your Cheese:</h4>
-            <div>
-                <input type="checkbox" id="provolone" name="cheese" class="cheese">
-                <label for="provolone">Provolone</label>
-    
-                <input type="checkbox" id="swiss" name="cheese" class="cheese">
-                <label for="swiss">Swiss</label>
-    
-                <input type="checkbox" id="american" name="cheese" class="cheese">
-                <label for="american">American</label>
-            </div>
-     </div>
-
-     <div id="veggies-container">
-            <h4>Select Your Veggies:</h4>
-            <div>
-                <input type="checkbox" id="lettuce" name="veggies" class="veggies">
-                <label for="lettuce">Lettuce</label>
-    
-                <input type="checkbox" id="tomatoes" name="veggies" class="veggies">
-                <label for="tomatoes">Tomatoes</label>
-    
-                <input type="checkbox" id="spinach" name="veggies" class="veggies">
-                <label for="spinach">Spinach</label>
-            </div>
-     </div>
-
-    <div class="checkout">
-            <h4>Checkout</h4>
-        <div id="printSandwich"></div>
-        <div id="printMeat"></div>
-        <div id="printCondiment"></div>
-        <div id="printCheese"></div>
-        <div id="printVeggies"></div>
-
 
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <script type="module" src="./javascripts/main.js"></script>
 </body>
+
 </html>
