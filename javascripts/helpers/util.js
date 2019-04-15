@@ -19,6 +19,8 @@ const allVeggies = veggie.getVeggies();
 const allItems = Object.assign(allMeat, allCondiments, cheeses, allVeggies, allBread);
 
 
+
+
 // let selectedBread = [];
 // let selectedMeat = [];
 // let selectedCondiment = [];
@@ -26,8 +28,7 @@ const allItems = Object.assign(allMeat, allCondiments, cheeses, allVeggies, allB
 // let selectedVeggies = [];
 let checkoutSelection = [];
 
-
-
+let totalPrices = [];
 const selectionEvents = (e) => {
     // e.preventDefault();
     const currentId = e.target.id;
@@ -45,9 +46,21 @@ const selectionEvents = (e) => {
         };
     }
     domBuilder(checkoutSelection);
+    
+ 
+        
 };
 
 
+const getTotal = () => {
+    let tp = [];
+    let top = 0 ;
+    checkoutSelection.forEach((p) => {
+        top += allItems[p];
+        console.log(top);
+    });
+    printToDom('totalP', top);
+};
 
 
 // const selectionEvents = (e) => {
@@ -160,6 +173,8 @@ const eventL = (e) => {
     for (let i = 0; i < currentButton.length; i++) {
         currentButton[i].addEventListener('click', selectionEvents);
     }
+    document.getElementById('finishOrder').addEventListener('click', getTotal);
+
 
     //    document.getElementById('white').addEventListener('click', selectionEvents);
     //    document.getElementById('wheat').addEventListener('click', selectionEvents);
@@ -182,14 +197,13 @@ const eventL = (e) => {
     //    document.getElementById('spinach').addEventListener('click', selectionEvents5);
 };
 
-let totalPrice = 0;
+
+
 const domBuilder = (array) => {
     let domString = '';
     array.forEach((item) => {
-        domString += `<p>${item}  $${allItems[item]} </p>`;
-        totalPrice += allItems[item];
+        domString += `<p>${item} $${allItems[item]} </p>`;
         printToDom('printSandwich', domString);
-        console.log(totalPrice);
 
     });
 };
