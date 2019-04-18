@@ -39,7 +39,10 @@ const selectionEvents = (e) => {
     }
     domBuilder(checkoutSelection);
     
- 
+    if (checkoutSelection.length < 1) {
+        const totalDiv = document.getElementById('total');
+        totalDiv.innerHTML = `<h4>Total: $0</h4>`;
+    } 
         
 };
 
@@ -65,8 +68,6 @@ const domBuilder = (array) => {
         printToDom('printSandwich', domString);
         printToDom('total', `<h4>Total: $${top}</h4>`);
     });
-
 };
-
 
 export default { eventL };
